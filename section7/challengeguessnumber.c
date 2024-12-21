@@ -28,20 +28,20 @@ int main()
                 validInput = true;
             }
         }
-        if(answer != random) {
-            if(answer > random) {
+        if(answer > random) {
                 printf("Sorry, %d is wrong, my number is less than that.\n", answer);
-            }
-            else {
+        }
+        else {
+            if(answer < random){
                 printf("Sorry, %d is wrong, my number is more than that.\n", answer);
             }
         }
-        else {
-            printf("Congratulations, you guessed it!!\n");
-        }
     }
-    if(answer != random) {
-
+    if(answer == random) {
+        printf("Congratulations! You guessed it! %d is the right number.\n", answer);
+    }
+    else {
+        printf("That's a pity, you had 5 guesses but you failed.\n");
     }
     
 

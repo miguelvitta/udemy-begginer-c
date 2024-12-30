@@ -1,5 +1,8 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
+
+#define SIZE 1001
 
 void getOnlyLength();
 void getStringInput(char *str);
@@ -20,19 +23,19 @@ int main() {
             "----------------------------------------------------------------"
             "\n");
 
-        int input = 0;
-        scanf("%d", &input);
+        char input = '0';
+        input = (char)getchar();
         while (getchar() != '\n') {
-            ; // to flush the input buffer
+            ;  // this weird addition of curly brackets is to appease the linter
         }
         switch (input) {
-            case 1:
+            case '1':
                 getOnlyLength();
                 break;
-            case 2:
+            case '2':
                 joinTwoStrings();
                 break;
-            case 3:
+            case '3':
                 determineIfEquals();
                 break;
             default:
@@ -43,7 +46,7 @@ int main() {
 }
 
 void getOnlyLength() {
-    char strL[1001];
+    char strL[SIZE];
     int countL = 0;
     getStringInput(strL);
     countL = getStringLength(strL, countL);
@@ -52,8 +55,9 @@ void getOnlyLength() {
 
 void getStringInput(char *str) {
     printf("Write a sentence (up to 1000 characters) to get its length: ");
-    scanf("%1000[^\n]", str);
-    getchar();
+    if (fgets(str, SIZE - 1, stdin) != NULL) {
+        str[strcspn(str, "\n")] = '\0';
+    }
 }
 
 int getStringLength(const char *str, int count) {
@@ -65,8 +69,8 @@ int getStringLength(const char *str, int count) {
 }
 
 void joinTwoStrings() {
-    char str1[1001];
-    char str2[1001];
+    char str1[SIZE];
+    char str2[SIZE];
 
     getStringInput(str1);
     getStringInput(str2);
@@ -91,8 +95,8 @@ void joinTwoStrings() {
 }
 
 void determineIfEquals() {
-    char str1[1001];
-    char str2[1001];
+    char str1[SIZE];
+    char str2[SIZE];
 
     getStringInput(str1);
     getStringInput(str2);

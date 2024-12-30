@@ -24,10 +24,11 @@ void getInput(char *str) {
 
 void reverseString(char *str, size_t len) {
     char strR[len + 1];
-    for (int i = 0, j = len - 1; j >= 0; i++, j--) {
+    int x = (int)len;
+    for (int i = 0, j = x - 1; j >= 0; i++, j--) {
         strR[i] = str[j];
     }
-    strR[len] = '\0';
+    strR[x] = '\0';
     printf("The original string is: \n\"%s\"\n and the reversed is: \n\"%s\"\n",
            str, strR);
 }

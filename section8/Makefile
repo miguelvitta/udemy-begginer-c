@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Wshadow
-DEBUG_FLAGS = -g
+DEBUG_FLAGS = -g3 -ggdb
 
 SRCS = $(shell find . -type f -name '*.c')
 

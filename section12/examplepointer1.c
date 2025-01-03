@@ -9,6 +9,8 @@ int main() {
     x = *int_pointer;
 
     printf("count = %i, x = %i\n", count, x);
+    
+    printf("adress of count is %p, and of x is %p.\n", &count, &x);
 
     return 0;
 }

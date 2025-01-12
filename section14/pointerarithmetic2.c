@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int arraySum(int array[], int n);
+int arraySum(int *array, int n);
 
 int main() {
     int n = 0;
@@ -20,13 +20,12 @@ int main() {
     return 0;
 }
 
-int arraySum(int array[], const int n) {
+int arraySum(int *array, const int n) {
     int sum = 0;
-    int *ptr = NULL;
     int *const arrayEnd = array + n;
 
-    for (ptr = array; ptr < arrayEnd; ++ptr) {
-        sum += *ptr;
+    for (; array < arrayEnd; ++array) {
+        sum += *array;
     }
 
     return sum;

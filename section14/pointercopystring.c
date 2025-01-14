@@ -4,7 +4,7 @@
 #define SIZE 1001
 
 void getInput(char *str);
-void copyString1(char to[], char from[]);
+void copyString1(char to[], const char from[]);
 void copyString2(char *to, char *from);
 
 int main() {
@@ -30,7 +30,7 @@ void getInput(char *str) {
     }
 }
 
-void copyString1(char to[], char from[]) {
+void copyString1(char to[], const char from[]) {
     int i = 0;
     for (; from[i] != '\0'; ++i) {
         to[i] = from[i];
@@ -39,10 +39,9 @@ void copyString1(char to[], char from[]) {
 }
 
 void copyString2(char *to, char *from) {
-    char *ptr = to;
-    for (; *from != '\0'; ++ptr, ++from) {
-        *ptr = *from;
+    while (*from) {
+        *to++ = *from++;
     }
-    *ptr = '\0';
+    *to = '\0';
 }
 

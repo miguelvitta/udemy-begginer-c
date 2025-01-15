@@ -7,23 +7,25 @@ int main() {
     size_t size = 15;
 
     str = malloc(sizeof *str * size);
-    if (str == NULL) {
+    if (!str) {
         free(str);
         fprintf(stderr, "Memory allocation has failed\n");
         return 1;
-    } 
+    }
     strlcpy(str, "jason", size);
-    printf("String = %s, adress = %p\n", str, (void*)str);
+    printf("String = %s, adress = %p\n", str, (void *)str);
 
     size = 25;
-    str = realloc(str, sizeof *str * size);
-    if (str == NULL) {
+    char *temp = NULL;
+    temp = realloc(str, sizeof *str * size);
+    if (!temp) {
         free(str);
         fprintf(stderr, "Memory reallocation has failed\n");
         return 1;
-    } 
+    }
+    str = temp;
     strlcat(str, ".com", size);
-    printf("String = %s, adress = %p\n", str, (void*)str);
+    printf("String = %s, adress = %p\n", str, (void *)str);
 
     free(str);
 

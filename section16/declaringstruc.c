@@ -7,7 +7,7 @@ typedef struct {
 
 typedef struct {
     char name[101];
-    Date hireDate[15];
+    Date hireDate;
     double salary;
 } Employee;
 

@@ -2,17 +2,21 @@
 #include <stdlib.h>
 
 typedef struct {
+    int day, month, year;
+} Date;
+
+typedef struct {
     char name[101];
-    char date[15];
-    float salary;
+    Date hireDate[15];
+    double salary;
 } Employee;
 
 int main() {
-    Employee emp1 = {"Miguel", "01/19/25", 1000000.99};
+    Employee emp1 = {"Miguel", {19, 01, 2025}, 1000000.99};
     
     printf("\n\tName: %s", emp1.name);
-    printf("\n\tDate: %s", emp1.date);
-    printf("\n\tSalary: $%.2f\n", emp1.salary);
+    printf("\n\tDate: %d/%d/%d", emp1.hireDate.day, emp1.hireDate.month, emp1.hireDate.year % 100);
+    printf("\n\tSalary: $%.2lf\n", emp1.salary);
 
     return 0;
 }

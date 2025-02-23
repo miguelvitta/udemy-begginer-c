@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int multiplyTwoNumbers(long long int x, long long int y);
+long long int multiplyTwoNumbers(long long int a, long long int b);
 
 int main() {
     srand((time(NULL)));
@@ -17,7 +17,7 @@ int main() {
     }
 }
 
-int multiplyTwoNumbers(long long int x, long long int y) {
-    long long int result = x * y;
+long long int multiplyTwoNumbers(long long int b, long long int a) {
+    long long int result = a * b;
     return result;
 }

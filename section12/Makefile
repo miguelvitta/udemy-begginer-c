@@ -1,6 +1,6 @@
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Wshadow
-DEBUG_FLAGS = -g3 -ggdb
+DEBUG_FLAGS = -O0 -g3 -fsanitize=address -fno-omit-frame-pointer
 
 SRCS = $(shell find . -type f -name '*.c')
 

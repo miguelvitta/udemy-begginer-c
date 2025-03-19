@@ -24,8 +24,6 @@ int main() {
     free(person.fname);
     free(person.lname);
     return 0;
-
-    return 0;
 }
 
 void getinfo(struct namect* pst) {

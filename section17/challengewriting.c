@@ -54,7 +54,6 @@ int main(int argc, char* argv[]) {
         return 7;
     }
 
-    // finalization with closing and freeing memory
     fclose(fp);
     fp = NULL;
     return 0;

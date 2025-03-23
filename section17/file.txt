@@ -1,16 +1,1 @@
-Test
-of
-counting
-lines
-
-
-
-more?
-
-
-
-
-
-line
-=
-16
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcd
